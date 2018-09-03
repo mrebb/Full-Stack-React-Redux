@@ -39,7 +39,7 @@ class Dashboard extends Component {
     let capabilities = role.capabilities;
     this.setState({capabilities});
   }
-  
+
   clearCookie(){
     cookie.remove('Login-Cookie');
     window.location.reload();
@@ -59,7 +59,7 @@ class Dashboard extends Component {
         <br></br>
         {this.props.things.length && this.state.capabilities.includes('read') ?
           <ul>
-            {this.props.things.map((thing,i)=> <Div key={i}><Things key={thing.id || i } thing={thing}/></Div>)}
+            {this.props.things.map((thing,i)=> <Div key={i}><Things key={thing.id || i } thing={thing} role={this.state.capabilities}/></Div>)}
           </ul>
           
           :

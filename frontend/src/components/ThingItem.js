@@ -15,9 +15,12 @@ class ThingItem extends Component {
         <p>
           {this.props.thing.name}
         </p>
-        <p>
-          <button onClick={this.onDelete}>x</button>
-        </p>
+        {
+          this.props.role.includes('delete') &&
+          <p>
+            <button onClick={this.onDelete}>x</button>
+          </p>
+        }
       </li>
      
     );
